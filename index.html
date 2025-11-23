@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoria Sefianas - Preparação EAGS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d1f3c3d450.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">Monitoria <span>Sefianas</span></div>
+                <ul class="nav-links">
+                    <a href="#start" class="btn-primary">Começar Agora</a>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero hero-spaced">
+            <div class="hero-content">
+                <h1>Plataforma Completa de <span>Enfermagem</span> focada no <span class="high light">EAGS</span></h1>
+                <p>Teoria objetiva, questões comentadas e metodologia direcionada para sua aprovação.</p>
+                <a href="#benefits" class="btn-secondary">Explorar Conteúdo</a>
+                <div class="hero-arrow">
+                    <svg class="arrows">
+                        <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                        <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                        <path class="a3" d="M0 40 L30 72 L60 40"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="benefits" class="benefits">
+        <h2>Por que escolher a <span class="highlight">Monitoria Sefianas</span>?</h2>
+        <div class="benefit-grid">
+            <div class="benefit-item">
+                <i class="fa-solid fa-book"></i>
+                <h3>Teoria Direcionada</h3>
+                <p>Conteúdo específico e direto ao ponto para o concurso da Aeronáutica.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fa-solid fa-book"></i>
+                <h3>Questões Comentadas</h3>
+                <p>Banco de questões com explicações claras para reforçar seu aprendizado.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fa-solid fa-book"></i>
+                <h3>Metodologia Estratégica</h3>
+                <p>Foco nos temas mais cobrados + revisão programada.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fa-solid fa-book"></i>
+                <h3>Metodologia Estratégica</h3>
+                <p>Foco nos temas mais cobrados + revisão programada.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fa-solid fa-book"></i>
+                <h3>Metodologia Estratégica</h3>
+                <p>Foco nos temas mais cobrados + revisão programada.</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fa-solid fa-book"></i>
+                <h3>Metodologia Estratégica</h3>
+                <p>Foco nos temas mais cobrados + revisão programada.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards-slider">
+        <div class="slider-wrapper">
+            <button class="slider-btn prev">&#10094;</button>
+
+            <div class="slider-track" id="sliderTrack">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+            </div>
+
+            <button class="slider-btn next">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="cta" id="start">
+        <h2>Prepare-se para o <span class="highlight">EAGS SEF</span> com máxima eficiência</h2>
+        <a href="#" class="btn-primary">Acessar Plataforma</a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Monitoria Sefianas • Plataforma voltada ao concurso EAGS</p>
+    </footer>
+</body>
+<!-- <script>
+    // ===== SLIDER DE CARDS =====
+    const track = document.querySelector(".slider-track");
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+
+    let index = 0;
+    const cardWidth = 340; // 320 + gap ~20px
+
+    function updateSlider() {
+        track.style.transform = `translateX(${-index * cardWidth}px)`;
+    }
+
+    // Botões
+    next.addEventListener("click", () => {
+        index = (index + 1) % track.children.length;
+        updateSlider();
+    });
+
+    prev.addEventListener("click", () => {
+        index = (index - 1 + track.children.length) % track.children.length;
+        updateSlider();
+    });
+
+    // Auto slide
+    setInterval(() => {
+        next.click();
+    }, 3000);
+
+    // ===== Arrastar com o mouse =====
+    let isDragging = false;
+    let startX;
+
+    track.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        startX = e.pageX;
+    });
+
+    track.addEventListener("mouseup", () => {
+        isDragging = false;
+    });
+
+    track.addEventListener("mouseleave", () => {
+        isDragging = false;
+    });
+
+    track.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        let dx = e.pageX - startX;
+
+        if (dx > 80) {
+            prev.click();
+            isDragging = false;
+        } else if (dx < -80) {
+            next.click();
+            isDragging = false;
+        }
+    });
+
+    const cardsOriginal = Array.from(track.children);
+
+    cardsOriginal.forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.add("clone");
+        track.appendChild(clone);
+    });
+        
+</script> -->
+<script>
+    /* ============================================
+   SLIDER INFINITO - 1 CARD POR VEZ
+   Com autoplay, setas e arraste do mouse
+    ============================================ */
+
+    const track = document.getElementById("sliderTrack");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
+
+    let cards = Array.from(track.children);
+    let cardWidth;
+
+    // Duplicar os cards para looping infinito
+    function duplicateCards() {
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.classList.add("clone");
+            track.appendChild(clone);
+        });
+    }
+
+    // Ajusta tamanho do card
+    function updateCardWidth() {
+        cardWidth = cards[0].offsetWidth + 20; // SOMA MARGEM ou GAP
+    }
+
+    // Estado do slider
+    let index = 0;
+    let total = cards.length;
+    let isTransitioning = false;
+
+    // Função principal de navegação
+    function goToSlide(i) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        track.style.transition = "transform 1.2s ease-in-out";
+        track.style.transform = `translateX(${-i * cardWidth}px)`;
+
+        setTimeout(() => {
+            isTransitioning = false;
+
+            // LOOP INFINITO REAL
+            if (i >= total) {
+                track.style.transition = "none";
+                track.style.transform = `translateX(0px)`;
+                index = 0;
+            }
+
+            // Loop inverso (quando clicar no prev no slide 0)
+            if (i < 0) {
+                track.style.transition = "none";
+                track.style.transform = `translateX(${-total * cardWidth}px)`;
+                index = total;
+            }
+
+        }, 460);
+    }
+
+    /* ============================================
+    CONTROLES DE SETA
+    ============================================ */
+    nextBtn.addEventListener("click", () => {
+        index++;
+        goToSlide(index);
+    });
+
+    prevBtn.addEventListener("click", () => {
+        index--;
+        goToSlide(index);
+    });
+
+    /* ============================================
+    AUTOPLAY
+    ============================================ */
+    let autoplay = setInterval(() => {
+        index++;
+        goToSlide(index);
+    }, 3000);
+
+    /* Pausar autoplay no hover */
+    track.addEventListener("mouseenter", () => clearInterval(autoplay));
+    track.addEventListener("mouseleave", () => {
+        autoplay = setInterval(() => {
+            index++;
+            goToSlide(index);
+        }, 3000);
+    });
+
+    /* ============================================
+    ARRASTAR COM O MOUSE
+    ============================================ */
+    let startX = 0;
+    let isDown = false;
+
+    track.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.clientX;
+        track.style.cursor = "grabbing";
+    });
+
+    window.addEventListener("mouseup", () => {
+        if (!isDown) return;
+        isDown = false;
+        track.style.cursor = "grab";
+
+        // Detectar direção
+        const diff = startX - lastX;
+        if (diff > 40) {
+            index++;
+            goToSlide(index);
+        } else if (diff < -40) {
+            index--;
+            goToSlide(index);
+        }
+    });
+
+    let lastX = 0;
+    track.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        lastX = e.clientX;
+    });
+
+    /* ============================================
+    INIT
+    ============================================ */
+    duplicateCards();
+    updateCardWidth();
+
+    // Garantir que tudo encaixe ao redimensionar
+    window.addEventListener("resize", updateCardWidth);
+
+</script>
+</html>
