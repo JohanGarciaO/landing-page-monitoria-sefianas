@@ -75,11 +75,24 @@
             <button class="slider-btn prev">&#10094;</button>
 
             <div class="slider-track" id="sliderTrack">
-                <div class="card">Card 1</div>
-                <div class="card">Card 2</div>
-                <div class="card">Card 3</div>
-                <div class="card">Card 4</div>
-                <div class="card">Card 5</div>
+                <div class="card">
+                    <img src="./assets/FUNDAMENTALS.png" alt="Conteúdo">
+                </div>
+                <div class="card">
+                    <img src="./assets/PUBLIC_HEALTH.png" alt="Conteúdo">
+                </div>
+                <div class="card">
+                    <img src="./assets/PUBLIC_HEALTH.png" alt="Conteúdo">
+                </div>
+                <div class="card">
+                    <img src="./assets/PUBLIC_HEALTH.png" alt="Conteúdo">
+                </div>
+                <div class="card">
+                    <img src="./assets/PUBLIC_HEALTH.png" alt="Conteúdo">
+                </div>
+                <div class="card">
+                    <img src="./assets/FUNDAMENTALS.png" alt="Conteúdo">
+                </div>
             </div>
 
             <button class="slider-btn next">&#10095;</button>
@@ -95,74 +108,7 @@
         <p>© 2025 Monitoria Sefianas • Plataforma voltada ao concurso EAGS</p>
     </footer>
 </body>
-<!-- <script>
-    // ===== SLIDER DE CARDS =====
-    const track = document.querySelector(".slider-track");
-    const prev = document.querySelector(".prev");
-    const next = document.querySelector(".next");
 
-    let index = 0;
-    const cardWidth = 340; // 320 + gap ~20px
-
-    function updateSlider() {
-        track.style.transform = `translateX(${-index * cardWidth}px)`;
-    }
-
-    // Botões
-    next.addEventListener("click", () => {
-        index = (index + 1) % track.children.length;
-        updateSlider();
-    });
-
-    prev.addEventListener("click", () => {
-        index = (index - 1 + track.children.length) % track.children.length;
-        updateSlider();
-    });
-
-    // Auto slide
-    setInterval(() => {
-        next.click();
-    }, 3000);
-
-    // ===== Arrastar com o mouse =====
-    let isDragging = false;
-    let startX;
-
-    track.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        startX = e.pageX;
-    });
-
-    track.addEventListener("mouseup", () => {
-        isDragging = false;
-    });
-
-    track.addEventListener("mouseleave", () => {
-        isDragging = false;
-    });
-
-    track.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        let dx = e.pageX - startX;
-
-        if (dx > 80) {
-            prev.click();
-            isDragging = false;
-        } else if (dx < -80) {
-            next.click();
-            isDragging = false;
-        }
-    });
-
-    const cardsOriginal = Array.from(track.children);
-
-    cardsOriginal.forEach(card => {
-        const clone = card.cloneNode(true);
-        clone.classList.add("clone");
-        track.appendChild(clone);
-    });
-        
-</script> -->
 <script>
     /* ============================================
    SLIDER INFINITO - 1 CARD POR VEZ
