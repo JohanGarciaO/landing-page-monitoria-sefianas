@@ -236,15 +236,130 @@
 
     <section class="cta bg-section-3" id="start">
       <div class="cta-content">
-        <h2>
-          Prepare-se para o <span class="highlight">EAGS SEF</span> com máxima
-          eficiência
-        </h2>
-        <a href="#" class="btn-primary">Acessar Plataforma</a>
+        <div class="header-cta">
+          <h2>
+            Prepare-se para o <span class="highlight">EAGS SEF</span> com máxima
+            eficiência
+          </h2>
+          <p>
+            Conheça tudo que você vai ter direito em cada um de nossos planos e
+            decida por você mesmo qual vale mais a pena.
+          </p>
+        </div>
+
+        <div class="cta-card-container">
+          <div class="cta-grid">
+            <div class="cta-item">
+              <i class="fa-solid fa-book"></i>
+              <h3>Turma de Questões</h3>
+              <p>
+                Banco de questões com explicações claras para reforçar seu
+                aprendizado.
+              </p>
+            </div>
+            <div class="cta-item">
+              <i class="fa-solid fa-book"></i>
+              <h3>Turma Completa</h3>
+              <p>
+                Conteúdo específico e direto ao ponto para o concurso da
+                Aeronáutica.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <a href="#" class="btn-primary">Acessar Plataforma</a> -->
       </div>
     </section>
 
-    <section class="cta support bg-section-3" id="start">
+    <section class="planos bg-section-3">
+      <div class="cards-plans-container">
+        <!-- TURMA DE QUESTÕES -->
+        <div class="card-plan">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Turma de Questões</h3>
+              <p class="subtitulo">
+                Aprenda fazendo e evolua pela correção guiada
+              </p>
+
+              <ul>
+                <li>✔️ Em média 8 aulas ao vivo por mês</li>
+                <li>✔️ Correção de baterias fiéis à bibliografia</li>
+                <li>✔️ Questões por assunto específico</li>
+                <li>✔️ Listas e gabaritos antes das aulas</li>
+                <li>✔️ Aulas gravadas na plataforma</li>
+              </ul>
+
+              <button class="flip-btn">Ideal para quem?</button>
+              <a href="#" class="btn-cta">Quero entrar na Turma de Questões</a>
+            </div>
+
+            <div class="card-back">
+              <h4>Ideal para quem:</h4>
+              <ul>
+                <li>✔️ Já estuda a teoria</li>
+                <li>✔️ Quer treinar com foco em concurso</li>
+                <li>✔️ Aprende melhor corrigindo questões</li>
+              </ul>
+              <button class="flip-btn">Voltar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TURMA COMPLETA -->
+        <div class="card-plan destaque">
+          <div class="selo bg-section-3">Mais escolhida</div>
+
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Turma Completa</h3>
+              <p class="subtitulo">
+                Preparação completa para quem quer chegar competitivo
+              </p>
+
+              <ul>
+                <li>✔️ Todas as aulas da Turma de Questões</li>
+                <li>✔️ Aulas teóricas fiéis à bibliografia</li>
+                <li>✔️ Conteúdo direto ao ponto e focado em prova</li>
+                <li>✔️ Projetos ao vivo gravados</li>
+                <li>✔️ Turma de extensão para o CAP</li>
+                <li>✔️ Preparação para EAGS, CAP e ESA</li>
+              </ul>
+
+              <button class="flip-btn">Ideal para quem?</button>
+              <a href="#" class="btn-cta destaque-btn"
+                >Quero a preparação completa</a
+              >
+            </div>
+
+            <div class="card-back">
+              <h4>Ideal para quem:</h4>
+              <ul>
+                <li>✔️ Quer começar do zero</li>
+                <li>✔️ Precisa de segurança teórica</li>
+                <li>✔️ Quer teoria + prática integrada</li>
+                <li>✔️ Busca aprovação com estratégia</li>
+              </ul>
+              <button class="flip-btn">Voltar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEXTO ESTRATÉGICO -->
+      <div class="texto-estrategico">
+        <p>
+          💡 <strong>Por que a maioria escolhe a Turma Completa?</strong><br />
+          Corrigir questões é essencial, mas entender profundamente a
+          bibliografia é o que diferencia quem acerta por sorte de quem acerta
+          com segurança. A Turma Completa une teoria objetiva, prática
+          direcionada e acesso total aos projetos da Monitoria.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta support bg-section-1" id="end">
       <div class="cta-content support-content">
         <img src="./assets/translucent_logo.png" alt="logo" />
         <h2>Ainda tem alguma dúvida?</h2>
@@ -288,6 +403,12 @@
           spaceBetween: 32,
         },
       },
+    });
+
+    document.querySelectorAll(".flip-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.closest(".card-plan").classList.toggle("flip");
+      });
     });
   </script>
 </html>
