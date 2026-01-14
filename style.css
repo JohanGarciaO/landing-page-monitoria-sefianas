@@ -400,8 +400,17 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-.cta h2 {
+.cta h2,
+.support h2 {
   margin: 0 0 14px;
+}
+
+.support {
+  min-height: 80vh;
+}
+
+.support-content img {
+  width: 200px;
 }
 
 /* FOOTER */
@@ -477,6 +486,9 @@ body {
   .header-swiper p {
     width: 90%;
     font-size: 12px;
+  }
+  .support {
+    min-height: 70vh;
   }
 }
 
