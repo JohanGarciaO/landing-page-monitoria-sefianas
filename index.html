@@ -280,9 +280,17 @@
                   </ul>
 
                   <div class="btn-cta-container">
-                    <a href="#" class="btn-primary"
-                      >Quero só a Turma de Questões</a
-                    >
+
+                    <a href="https://invoice.infinitepay.io/plans/larissa-marcelo-/aElckkjOh" class="btn-secondary" id="btn-questions-cta">
+                      <span class="text-wrapper">
+                        <!-- placeholder invisível (define tamanho do botão) -->
+                        <span class="text placeholder">Quero só a Turma de Questões</span>
+                        <!-- textos animados -->
+                        <span class="text default">Quero só a Turma de Questões</span>
+                        <span class="text hover">Pague somente <span class="highlight">R$ 70,00</span></span>
+                      </span>
+                    </a>
+
                     <button class="flip-btn">
                       <i class="fa-solid fa-rotate"></i> Ideal para quem?
                     </button>
@@ -290,13 +298,19 @@
                 </div>
 
                 <div class="card-back bg-section-1">
-                  <h4>Ideal para quem:</h4>
+                  <h3>Ideal para quem:</h3>
                   <ul>
                     <li>✔️ Já estuda a teoria</li>
                     <li>✔️ Quer treinar com foco em concurso</li>
-                    <li>✔️ Aprende melhor corrigindo questões</li>
+                    <li>✔️ Aprende melhor <b>corrigindo questões</b></li>
                   </ul>
-                  <button class="flip-btn">Voltar</button>
+
+                  <div class="btn-cta-container">
+                    <button class="flip-btn">
+                      <i class="fa-solid fa-rotate"></i> Voltar
+                    </button>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -344,7 +358,17 @@
                   </ul>
 
                   <div class="btn-cta-container">
-                    <a href="#" class="btn-primary">Prefiro a Turma Completa</a>
+
+                    <a href="https://invoice.infinitepay.io/plans/larissa-marcelo-/3VQYQleDkr" class="btn-primary" id="btn-completed-cta">
+                      <span class="text-wrapper">
+                        <!-- placeholder invisível (define tamanho do botão) -->
+                        <span class="text placeholder">Prefiro a Turma Completa</span>
+                        <!-- textos animados -->
+                        <span class="text default">Prefiro a Turma Completa</span>
+                        <span class="text hover">Tudo por apenas <span class="highlight">R$ 140,00</span></span>
+                      </span>
+                    </a>
+
                     <button class="flip-btn">
                       <i class="fa-solid fa-rotate"></i> Ideal para quem?
                     </button>
@@ -352,7 +376,7 @@
                 </div>
 
                 <div class="card-back bg-section-1 destaque">
-                  <h4>Ideal para quem:</h4>
+                  <h3>Ideal para quem:</h3>
                   <ul>
                     <li>✔️ Quer <b>começar do zero ou corrigir lacunas</b></li>
                     <li>✔️ Busca <b>segurança teórica + prática</b></li>
@@ -361,7 +385,13 @@
                     </li>
                     <li>✔️ Não quer correr o risco de “estudar pela metade”</li>
                   </ul>
-                  <button class="flip-btn">Voltar</button>
+                  
+                  <div class="btn-cta-container">
+                    <button class="flip-btn">
+                      <i class="fa-solid fa-rotate"></i> Voltar
+                    </button>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -375,10 +405,10 @@
             </h2>
             <p>
               Porque corrigir questões é essencial — mas entender profundamente
-              a bibliografia é o que diferencia quem acerta por sorte de quem
-              acerta com segurança. A Turma Completa une teoria objetiva,
+              a <b>bibliografia</b> é o que diferencia quem <b>acerta por sorte</b> de quem
+              <b>acerta com segurança</b>. A Turma Completa une teoria objetiva,
               prática direcionada e acesso total aos projetos da Monitoria,
-              formando uma preparação sólida, contínua e focada em aprovação.
+              formando uma preparação sólida, contínua e <b>focada em aprovação</b>.
             </p>
           </div>
         </div>
@@ -436,5 +466,26 @@
         btn.closest(".cta-item").classList.toggle("flip");
       });
     });
+
+    const questionBtn = document.getElementById('btn-questions-cta');
+    
+    questionBtn.addEventListener('mouseenter', () => {
+      questionBtn.classList.add('is-hover');
+    });
+
+    questionBtn.addEventListener('mouseleave', () => {
+      questionBtn.classList.remove('is-hover');
+    });
+
+    const completedBtn = document.getElementById('btn-completed-cta');
+    
+    completedBtn.addEventListener('mouseenter', () => {
+      completedBtn.classList.add('is-hover');
+    });
+
+    completedBtn.addEventListener('mouseleave', () => {
+      completedBtn.classList.remove('is-hover');
+    });
+
   </script>
 </html>
