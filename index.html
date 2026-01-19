@@ -280,14 +280,24 @@
                   </ul>
 
                   <div class="btn-cta-container">
-
-                    <a href="https://invoice.infinitepay.io/plans/larissa-marcelo-/aElckkjOh" class="btn-secondary" id="btn-questions-cta">
+                    <a
+                      href="https://invoice.infinitepay.io/plans/larissa-marcelo-/aElckkjOh"
+                      class="btn-secondary"
+                      id="btn-questions-cta"
+                    >
                       <span class="text-wrapper">
                         <!-- placeholder invisível (define tamanho do botão) -->
-                        <span class="text placeholder">Quero só a Turma de Questões</span>
+                        <span class="text placeholder"
+                          >Quero só a Turma de Questões</span
+                        >
                         <!-- textos animados -->
-                        <span class="text default">Quero só a Turma de Questões</span>
-                        <span class="text hover">Pague somente <span class="highlight">R$ 70,00</span></span>
+                        <span class="text default"
+                          >Quero só a Turma de Questões</span
+                        >
+                        <span class="text hover"
+                          >Pague somente
+                          <span class="highlight">R$ 70,00</span></span
+                        >
                       </span>
                     </a>
 
@@ -310,7 +320,6 @@
                       <i class="fa-solid fa-rotate"></i> Voltar
                     </button>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -358,14 +367,24 @@
                   </ul>
 
                   <div class="btn-cta-container">
-
-                    <a href="https://invoice.infinitepay.io/plans/larissa-marcelo-/3VQYQleDkr" class="btn-primary" id="btn-completed-cta">
+                    <a
+                      href="https://invoice.infinitepay.io/plans/larissa-marcelo-/3VQYQleDkr"
+                      class="btn-primary"
+                      id="btn-completed-cta"
+                    >
                       <span class="text-wrapper">
                         <!-- placeholder invisível (define tamanho do botão) -->
-                        <span class="text placeholder">Prefiro a Turma Completa</span>
+                        <span class="text placeholder"
+                          >Prefiro a Turma Completa</span
+                        >
                         <!-- textos animados -->
-                        <span class="text default">Prefiro a Turma Completa</span>
-                        <span class="text hover">Tudo por apenas <span class="highlight">R$ 140,00</span></span>
+                        <span class="text default"
+                          >Prefiro a Turma Completa</span
+                        >
+                        <span class="text hover"
+                          >Tudo por apenas
+                          <span class="highlight">R$ 140,00</span></span
+                        >
                       </span>
                     </a>
 
@@ -385,13 +404,12 @@
                     </li>
                     <li>✔️ Não quer correr o risco de “estudar pela metade”</li>
                   </ul>
-                  
+
                   <div class="btn-cta-container">
                     <button class="flip-btn">
                       <i class="fa-solid fa-rotate"></i> Voltar
                     </button>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -405,10 +423,11 @@
             </h2>
             <p>
               Porque corrigir questões é essencial — mas entender profundamente
-              a <b>bibliografia</b> é o que diferencia quem <b>acerta por sorte</b> de quem
-              <b>acerta com segurança</b>. A Turma Completa une teoria objetiva,
-              prática direcionada e acesso total aos projetos da Monitoria,
-              formando uma preparação sólida, contínua e <b>focada em aprovação</b>.
+              a <b>bibliografia</b> é o que diferencia quem
+              <b>acerta por sorte</b> de quem <b>acerta com segurança</b>. A
+              Turma Completa une teoria objetiva, prática direcionada e acesso
+              total aos projetos da Monitoria, formando uma preparação sólida,
+              contínua e <b>focada em aprovação</b>.
             </p>
           </div>
         </div>
@@ -463,29 +482,79 @@
 
     document.querySelectorAll(".flip-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        btn.closest(".cta-item").classList.toggle("flip");
+        const card = btn.closest(".cta-item");
+        const front = card.querySelector(".card-front");
+        const back = card.querySelector(".card-back");
+
+        const isFlipped = card.classList.toggle("flip");
+
+        // const onTransitionEnd = (e) => {
+        //   if (e.propertyName !== "transform") return;
+
+        //   if (isFlipped) {
+        //     front.classList.add("d-none");
+        //     back.classList.remove("d-none");
+        //   } else {
+        //     back.classList.add("d-none");
+        //     front.classList.remove("d-none");
+        //   }
+
+        //   card.removeEventListener("transitionend", onTransitionEnd);
+        // };
+
+        // card.addEventListener("transitionend", onTransitionEnd);
+
+        // btn.closest(".cta-item").classList.toggle("flip");
+
+        front.classList.remove("d-none");
+        back.classList.remove("d-none");
+        if (isFlipped) {
+          front.classList.add("d-none");
+          // back.classList.remove("d-none");
+        } else {
+          back.classList.add("d-none");
+          // front.classList.remove("d-none");
+        }
+        /*
+        setTimeout(() => {
+          if (isFlipped) {
+            front.classList.add("d-none");
+            // back.classList.remove("d-none");
+          } else {
+            back.classList.add("d-none");
+            // front.classList.remove("d-none");
+          }
+        }, 800); // mesmo tempo do transition
+*/
+        // btn
+        //   .closest(".cta-item")
+        //   .querySelector(".card-front")
+        //   .classList.toggle("d-none");
+        // btn
+        //   .closest(".cta-item")
+        //   .querySelector(".card-back")
+        //   .classList.toggle("d-none");
       });
     });
 
-    const questionBtn = document.getElementById('btn-questions-cta');
-    
-    questionBtn.addEventListener('mouseenter', () => {
-      questionBtn.classList.add('is-hover');
+    const questionBtn = document.getElementById("btn-questions-cta");
+
+    questionBtn.addEventListener("mouseenter", () => {
+      questionBtn.classList.add("is-hover");
     });
 
-    questionBtn.addEventListener('mouseleave', () => {
-      questionBtn.classList.remove('is-hover');
+    questionBtn.addEventListener("mouseleave", () => {
+      questionBtn.classList.remove("is-hover");
     });
 
-    const completedBtn = document.getElementById('btn-completed-cta');
-    
-    completedBtn.addEventListener('mouseenter', () => {
-      completedBtn.classList.add('is-hover');
+    const completedBtn = document.getElementById("btn-completed-cta");
+
+    completedBtn.addEventListener("mouseenter", () => {
+      completedBtn.classList.add("is-hover");
     });
 
-    completedBtn.addEventListener('mouseleave', () => {
-      completedBtn.classList.remove('is-hover');
+    completedBtn.addEventListener("mouseleave", () => {
+      completedBtn.classList.remove("is-hover");
     });
-
   </script>
 </html>

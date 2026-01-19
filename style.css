@@ -451,6 +451,11 @@ button:focus {
   transform: rotateY(180deg);
 }
 
+/* .cta-item.flip .card-front {
+  pointer-events: none;
+  opacity: 0;
+} */
+
 .card-front {
   height: 100%;
 }
@@ -464,10 +469,17 @@ button:focus {
   border: 2px solid rgba(255, 255, 255, 0.04);
   box-shadow: 0 6px 20px rgba(2, 6, 23, 0.45);
   padding: 30px;
+  transition: 0.8s;
+  transform-style: preserve-3d;
 }
 
 .card-back {
   transform: rotateY(180deg);
+}
+
+.d-none {
+  opacity: 0;
+  /* pointer-events: none; */
 }
 
 .card-back h3 {
@@ -528,7 +540,7 @@ button:focus {
 }
 
 #btn-questions-cta,
-#btn-completed-cta  {
+#btn-completed-cta {
   width: 300px;
   position: relative;
   overflow: hidden;
@@ -726,7 +738,7 @@ button:focus {
   .cta-card-container .cta-item:nth-child(1) .card-inner {
     height: 700px;
   }
-  .cta-card-container .cta-item:nth-child(2) .card-inner  {
+  .cta-card-container .cta-item:nth-child(2) .card-inner {
     height: 780px;
   }
   .card-front,
