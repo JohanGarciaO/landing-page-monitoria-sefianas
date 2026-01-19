@@ -494,6 +494,16 @@
       },
     });
 
+    const slider = document.querySelector(".swiper-wrapper");
+
+    slider.addEventListener("mouseenter", () => {
+      swiper.autoplay.stop();
+    });
+
+    slider.addEventListener("mouseleave", () => {
+      swiper.autoplay.start();
+    });
+
     document.querySelectorAll(".flip-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const card = btn.closest(".cta-item");
@@ -502,52 +512,13 @@
 
         const isFlipped = card.classList.toggle("flip");
 
-        // const onTransitionEnd = (e) => {
-        //   if (e.propertyName !== "transform") return;
-
-        //   if (isFlipped) {
-        //     front.classList.add("d-none");
-        //     back.classList.remove("d-none");
-        //   } else {
-        //     back.classList.add("d-none");
-        //     front.classList.remove("d-none");
-        //   }
-
-        //   card.removeEventListener("transitionend", onTransitionEnd);
-        // };
-
-        // card.addEventListener("transitionend", onTransitionEnd);
-
-        // btn.closest(".cta-item").classList.toggle("flip");
-
         front.classList.remove("d-none");
         back.classList.remove("d-none");
         if (isFlipped) {
           front.classList.add("d-none");
-          // back.classList.remove("d-none");
         } else {
           back.classList.add("d-none");
-          // front.classList.remove("d-none");
         }
-        /*
-        setTimeout(() => {
-          if (isFlipped) {
-            front.classList.add("d-none");
-            // back.classList.remove("d-none");
-          } else {
-            back.classList.add("d-none");
-            // front.classList.remove("d-none");
-          }
-        }, 800); // mesmo tempo do transition
-*/
-        // btn
-        //   .closest(".cta-item")
-        //   .querySelector(".card-front")
-        //   .classList.toggle("d-none");
-        // btn
-        //   .closest(".cta-item")
-        //   .querySelector(".card-back")
-        //   .classList.toggle("d-none");
       });
     });
 
