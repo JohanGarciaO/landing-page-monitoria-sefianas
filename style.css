@@ -172,15 +172,24 @@ button:focus {
   text-align: center;
 }
 
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
 .hero h1 {
   font-size: clamp(28px, 4.2vw, 48px);
-  margin: 100px 0 18px;
+  margin: 100px 0 2px;
   line-height: 1.02;
   font-weight: 700;
 }
 
-.hero h1 span {
-  color: var(--cyan);
+.hero h4 {
+  margin: 0;
+  font-weight: 500;
 }
 
 .hero p {
