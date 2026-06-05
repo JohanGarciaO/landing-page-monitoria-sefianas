@@ -457,7 +457,7 @@ button:focus {
 
 .card-inner {
   position: relative;
-  height: 600px;
+  height: 530px;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
@@ -794,8 +794,10 @@ button:focus {
   .cta-item ul {
     /* font-size: 0.9rem;
     line-height: 1.8rem; */
-    font-size: inherit;
-    line-height: inherit;
+    /* font-size: inherit;
+    line-height: inherit; */
+    font-size: 0.8rem;
+    line-height: 1.5rem;
   }
   .cta.support h2 {
     font-size: 16px;
@@ -830,10 +832,10 @@ button:focus {
     flex-direction: column;
   }
   .cta-card-container .cta-item:nth-child(1) .card-inner {
-    height: 700px;
+    min-height: 640px;
   }
   .cta-card-container .cta-item:nth-child(2) .card-inner {
-    height: 780px;
+    min-height: 640px;
   }
   .card-front,
   .card-back {
