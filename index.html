@@ -371,12 +371,15 @@
                     </a>
 
                     <button class="flip-btn">
-                      <i class="fa-solid fa-rotate"></i> Ideal para quem?
+                      <span class="icon-wrapper">
+                        <i class="fa-solid fa-rotate"></i>
+                      </span>
+                      Ideal para quem?
                     </button>
                   </div>
                 </div>
 
-                <div class="card-back bg-section-1 destaque">
+                <div class="card-back bg-section-1 destaque d-none">
                   <h3>Ideal para quem:</h3>
                   <ul>
                     <li>✔️ Quer <b>começar do zero ou corrigir lacunas</b></li>
@@ -389,7 +392,10 @@
 
                   <div class="btn-cta-container">
                     <button class="flip-btn">
-                      <i class="fa-solid fa-rotate"></i> Voltar
+                      <span class="icon-wrapper">
+                        <i class="fa-solid fa-rotate"></i>
+                      </span>
+                      Voltar
                     </button>
                   </div>
                 </div>
@@ -458,12 +464,15 @@
                     </a>
 
                     <button class="flip-btn">
-                      <i class="fa-solid fa-rotate"></i> Ideal para quem?
+                      <span class="icon-wrapper">
+                        <i class="fa-solid fa-rotate"></i>
+                      </span>
+                      Ideal para quem?
                     </button>
                   </div>
                 </div>
 
-                <div class="card-back bg-section-1">
+                <div class="card-back bg-section-1 d-none">
                   <h3>Ideal para quem:</h3>
                   <ul>
                     <li>✔️ Já <b>domina</b> a teoria</li>
@@ -474,7 +483,10 @@
 
                   <div class="btn-cta-container">
                     <button class="flip-btn">
-                      <i class="fa-solid fa-rotate"></i> Voltar
+                      <span class="icon-wrapper">
+                        <i class="fa-solid fa-rotate"></i>
+                      </span>
+                      Ideal para quem?
                     </button>
                   </div>
                 </div>
@@ -567,6 +579,10 @@
 
     slider.addEventListener("mouseleave", () => {
       swiper.autoplay.start();
+    });
+
+    document.querySelectorAll(".card-back").forEach((back) => {
+      back.classList.add("d-none");
     });
 
     document.querySelectorAll(".flip-btn").forEach((btn) => {

@@ -440,6 +440,8 @@ button:focus {
 .cta-item {
   padding: 0px;
   position: relative;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 
 .cta-item h3 {
@@ -460,6 +462,7 @@ button:focus {
   height: 530px;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  transform: translateZ(0);
 }
 
 .cta-item.flip .card-inner {
@@ -493,8 +496,7 @@ button:focus {
 }
 
 .d-none {
-  opacity: 0;
-  /* pointer-events: none; */
+  display: none;
 }
 
 .card-back h3 {
@@ -618,6 +620,22 @@ button:focus {
   justify-content: center;
   align-items: center;
   gap: 8px;
+  animation: pulseHint 2s ease-in-out infinite;
+}
+
+@keyframes pulseHint {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.05);
+  }
+
+  40% {
+    transform: scale(1);
+  }
 }
 
 .flip-btn:focus {
@@ -628,9 +646,12 @@ button:focus {
   color: var(--cyan);
 }
 
-.flip-btn i {
+.icon-wrapper {
+  /* animation: hint 2s ease-in-out infinite;
+  -webkit-animation: hint 2s ease-in-out infinite; */
+  /* display: inline-flex;
   animation: hint 2s ease-in-out infinite;
-  -webkit-animation: hint 2s ease-in-out infinite;
+  -webkit-animation: hint 2s ease-in-out infinite; */
 }
 
 @keyframes hint {
