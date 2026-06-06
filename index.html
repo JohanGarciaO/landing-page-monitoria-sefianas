@@ -379,7 +379,7 @@
                   </div>
                 </div>
 
-                <div class="card-back bg-section-1 destaque d-none">
+                <div class="card-back bg-section-1 destaque">
                   <h3>Ideal para quem:</h3>
                   <ul>
                     <li>✔️ Quer <b>começar do zero ou corrigir lacunas</b></li>
@@ -472,7 +472,7 @@
                   </div>
                 </div>
 
-                <div class="card-back bg-section-1 d-none">
+                <div class="card-back bg-section-1">
                   <h3>Ideal para quem:</h3>
                   <ul>
                     <li>✔️ Já <b>domina</b> a teoria</li>
@@ -585,6 +585,21 @@
       back.classList.add("d-none");
     });
 
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.querySelectorAll(".card-back").forEach((back) => {
+          back.classList.remove("d-none");
+        });
+      }, 100);
+    });
+
+    document.querySelectorAll(".flip-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.closest(".cta-item").classList.toggle("flip");
+      });
+    });
+
+    /*
     document.querySelectorAll(".flip-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const card = btn.closest(".cta-item");
@@ -602,6 +617,7 @@
         }
       });
     });
+*/
 
     const questionBtn = document.getElementById("btn-questions-cta");
 
