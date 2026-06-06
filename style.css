@@ -440,6 +440,8 @@ button:focus {
 .cta-item {
   padding: 0px;
   position: relative;
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
 }
 
 .cta-item h3 {
@@ -460,19 +462,7 @@ button:focus {
   height: 530px;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-}
-
-.cta-item.flip .card-inner {
-  transform: rotateY(180deg);
-}
-
-/* .cta-item.flip .card-front {
-  pointer-events: none;
-  opacity: 0;
-} */
-
-.card-front {
-  height: 100%;
+  transform: translateZ(0);
 }
 
 .card-front,
@@ -480,21 +470,32 @@ button:focus {
   position: absolute;
   width: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   border-radius: 12px;
   border: 2px solid rgba(255, 255, 255, 0.04);
   box-shadow: 0 6px 20px rgba(2, 6, 23, 0.45);
   padding: 30px;
   transition: 0.8s;
-  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.card-front {
+  height: 100%;
+  transform: rotateY(0deg);
 }
 
 .card-back {
   transform: rotateY(180deg);
 }
 
+.cta-item.flip .card-inner {
+  transform: rotateY(180deg);
+}
+
 .d-none {
-  opacity: 0;
-  /* pointer-events: none; */
+  display: none;
 }
 
 .card-back h3 {
@@ -618,6 +619,22 @@ button:focus {
   justify-content: center;
   align-items: center;
   gap: 8px;
+  animation: pulseHint 2s ease-in-out infinite;
+}
+
+@keyframes pulseHint {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.05);
+  }
+
+  40% {
+    transform: scale(1);
+  }
 }
 
 .flip-btn:focus {
@@ -628,9 +645,12 @@ button:focus {
   color: var(--cyan);
 }
 
-.flip-btn i {
+.icon-wrapper {
+  /* animation: hint 2s ease-in-out infinite;
+  -webkit-animation: hint 2s ease-in-out infinite; */
+  /* display: inline-flex;
   animation: hint 2s ease-in-out infinite;
-  -webkit-animation: hint 2s ease-in-out infinite;
+  -webkit-animation: hint 2s ease-in-out infinite; */
 }
 
 @keyframes hint {

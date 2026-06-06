@@ -371,7 +371,10 @@
                     </a>
 
                     <button class="flip-btn">
-                      <i class="fa-solid fa-rotate"></i> Ideal para quem?
+                      <span class="icon-wrapper">
+                        <i class="fa-solid fa-rotate"></i>
+                      </span>
+                      Ideal para quem?
                     </button>
                   </div>
                 </div>
@@ -389,7 +392,10 @@
 
                   <div class="btn-cta-container">
                     <button class="flip-btn">
-                      <i class="fa-solid fa-rotate"></i> Voltar
+                      <span class="icon-wrapper">
+                        <i class="fa-solid fa-rotate"></i>
+                      </span>
+                      Voltar
                     </button>
                   </div>
                 </div>
@@ -458,7 +464,10 @@
                     </a>
 
                     <button class="flip-btn">
-                      <i class="fa-solid fa-rotate"></i> Ideal para quem?
+                      <span class="icon-wrapper">
+                        <i class="fa-solid fa-rotate"></i>
+                      </span>
+                      Ideal para quem?
                     </button>
                   </div>
                 </div>
@@ -474,7 +483,10 @@
 
                   <div class="btn-cta-container">
                     <button class="flip-btn">
-                      <i class="fa-solid fa-rotate"></i> Voltar
+                      <span class="icon-wrapper">
+                        <i class="fa-solid fa-rotate"></i>
+                      </span>
+                      Ideal para quem?
                     </button>
                   </div>
                 </div>
@@ -569,6 +581,25 @@
       swiper.autoplay.start();
     });
 
+    document.querySelectorAll(".card-back").forEach((back) => {
+      back.classList.add("d-none");
+    });
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.querySelectorAll(".card-back").forEach((back) => {
+          back.classList.remove("d-none");
+        });
+      }, 100);
+    });
+
+    document.querySelectorAll(".flip-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.closest(".cta-item").classList.toggle("flip");
+      });
+    });
+
+    /*
     document.querySelectorAll(".flip-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const card = btn.closest(".cta-item");
@@ -586,6 +617,7 @@
         }
       });
     });
+*/
 
     const questionBtn = document.getElementById("btn-questions-cta");
 
