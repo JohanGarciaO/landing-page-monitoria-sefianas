@@ -253,3 +253,95 @@ function createCard(plan, featured = false) {
     </div>
   `;
 }
+
+document.querySelectorAll(".feedback-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("show-back");
+  });
+});
+
+// MODAL
+
+let currentSide = "front";
+let currentFront = "";
+let currentBack = "";
+
+const modal = document.getElementById("feedback-modal");
+const modalImage = document.getElementById("feedback-modal-image");
+const feedbackPage = document.querySelector("#feedback-page");
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+modalImage.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+modalImage.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const distance = touchEndX - touchStartX;
+  // Ignora movimentos pequenos
+  if (Math.abs(distance) < 50) return;
+
+  if (distance < 0 && currentSide === "front") {
+    modalImage.style.opacity = "0";
+    modalImage.src = currentBack;
+    currentSide = "back";
+  } else if (distance > 0 && currentSide === "back") {
+    modalImage.style.opacity = "0";
+    modalImage.src = currentFront;
+    currentSide = "front";
+  }
+
+  setTimeout(() => {
+    modalImage.style.opacity = "1";
+    updatePageIndicator();
+  }, 150);
+}
+
+document.querySelectorAll(".feedback-selo-overlay").forEach((overlay) => {
+  overlay.addEventListener("click", (e) => {
+    const card = e.target.parentElement.parentElement;
+
+    currentFront = card.dataset.front;
+    currentBack = card.dataset.back;
+
+    currentSide = "front";
+    updatePageIndicator();
+
+    modalImage.src = currentFront;
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+});
+
+function updatePageIndicator() {
+  feedbackPage.textContent = currentSide === "front" ? "1 / 2" : "2 / 2";
+}
+
+document.querySelector(".feedback-nav.next").addEventListener("click", () => {
+  if (currentSide === "front") {
+    modalImage.src = currentBack;
+    currentSide = "back";
+    updatePageIndicator();
+  }
+});
+
+document.querySelector(".feedback-nav.prev").addEventListener("click", () => {
+  if (currentSide === "back") {
+    modalImage.src = currentFront;
+    currentSide = "front";
+    updatePageIndicator();
+  }
+});
