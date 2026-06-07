@@ -454,11 +454,11 @@
                       <span class="text-wrapper">
                         <!-- placeholder invisível (define tamanho do botão) -->
                         <span class="text placeholder"
-                          >Quero só a Turma de Questões</span
+                          >Quero a Turma de Questões</span
                         >
                         <!-- textos animados -->
                         <span class="text default"
-                          >Quero só a Turma de Questões</span
+                          >Quero a Turma de Questões</span
                         >
                         <span class="text hover"
                           >Pague somente
@@ -543,19 +543,24 @@
             <button id="restart-quiz" class="btn-secondary effect-fade d-none">
               Reiniciar quiz
             </button>
-            <div id="quiz-step-1" class="effect-fade effect-visible">
+            <div id="quiz-step-1" class="quiz effect-fade effect-visible">
               <h3>Qual concurso você quer conquistar?</h3>
-              <button class="btn-primary btn-concurso" data-concurso="eags">
-                EAGS-SEF
-              </button>
-              <button class="btn-primary btn-concurso" data-concurso="cap">
-                CAP-ENF
-              </button>
-              <button class="btn-primary btn-concurso" data-concurso="indeciso">
-                Ainda não me decidi
-              </button>
+              <div class="options-question">
+                <button class="btn-primary btn-concurso" data-concurso="eags">
+                  EAGS-SEF
+                </button>
+                <button class="btn-primary btn-concurso" data-concurso="cap">
+                  CAP-ENF
+                </button>
+                <button
+                  class="btn-primary btn-concurso"
+                  data-concurso="indeciso"
+                >
+                  Ainda não me decidi
+                </button>
+              </div>
             </div>
-            <div id="quiz-step-2" class="effect-fade d-none">
+            <div id="quiz-step-2" class="quiz effect-fade d-none">
               <h3>
                 Você gostaria de ter um acompanhamento personalizado de seus
                 estudos?

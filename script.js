@@ -73,13 +73,8 @@ function resetState() {
 
   applyFade(helper, restartBtn, 350);
   applyFade(step1, step2, 600);
-
-  cardsContainer.classList.remove("effect-visible");
-  helperResult.classList.remove("effect-visible");
-  setTimeout(() => {
-    cardsContainer.classList.add("d-none");
-    helperResult.classList.add("d-none");
-  }, 300);
+  applyFade(helper, helperResult, 350);
+  applyFade(helper, cardsContainer, 350);
 }
 
 const state = {
@@ -143,9 +138,9 @@ function showRecommendation() {
   const recommendation = getRecommendation();
   if (!recommendation) return;
 
+  applyFade(helperResult, step1, 350);
   renderCards(recommendation.primary, recommendation.secondary);
-  applyFade(helperResult, step1, 300);
-  applyFade(cardsContainer, step2, 300);
+  applyFade(cardsContainer, step2, 350);
 }
 
 function getRecommendation() {

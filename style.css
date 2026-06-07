@@ -504,7 +504,7 @@ button:focus {
 }
 
 .d-none {
-  display: none;
+  display: none !important;
 }
 
 .card-back h3 {
@@ -718,7 +718,7 @@ button:focus {
 .effect-fade {
   opacity: 0;
   transform: translateY(10px);
-  transition: all 0.55s ease;
+  transition: all 0.6s ease;
 }
 
 .effect-visible {
@@ -759,6 +759,22 @@ button:focus {
   font-size: 16px;
   font-weight: normal;
   color: #ccc;
+}
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options-question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 /* SUPPORT */
@@ -906,7 +922,7 @@ button:focus {
     flex-direction: column;
   }
   .cta-card-container .cta-item:nth-child(1) .card-inner {
-    min-height: 640px;
+    min-height: 680px;
   }
   .cta-card-container .cta-item:nth-child(2) .card-inner {
     min-height: 640px;
@@ -938,10 +954,22 @@ button:focus {
 
 @media (max-width: 600px) {
   #content-cards-engrenando .card-inner {
-    width: 90%;
+    width: 95%;
   }
 
   #content-cards-engrenando .cta-item .container-price {
-    height: 20%;
+    height: 15%;
+  }
+
+  #content-cards-engrenando .cta-item .price {
+    font-size: 40px;
+  }
+
+  #content-cards-engrenando .cta-item ul {
+    font-size: 0.9rem;
+  }
+
+  #content-cards-engrenando .btn-effect-wrapper {
+    width: 250px;
   }
 }
