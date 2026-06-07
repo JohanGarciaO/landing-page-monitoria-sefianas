@@ -37,17 +37,20 @@
       src="https://kit.fontawesome.com/d1f3c3d450.js"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js" type="module" defer></script>
   </head>
   <body>
     <header>
       <nav class="navbar">
         <div class="nav-container">
-          <div class="logo">Monitoria <span>Sefianas</span></div>
+          <a href="#hero" class="logo" style="text-decoration: none"
+            >Monitoria <span>Sefianas</span></a
+          >
           <ul class="nav-links">
             <a
               href="https://plataforma.monitoriasefianas.com.br/"
               class="btn-primary"
-              >Já sou Aluno(a)</a
+              >Sou Sefiana(o)</a
             >
             <a
               href="https://engrenando.plataformatutory.com.br/"
@@ -58,7 +61,7 @@
         </div>
       </nav>
 
-      <div class="hero bg-section-1">
+      <div class="hero bg-section-1" id="hero">
         <div class="hero-content">
           <div class="hero-head">
             <div class="hero-title">
@@ -86,6 +89,7 @@
       </div>
     </header>
 
+    <!-- Cards Benefícios -->
     <section id="benefits" class="benefits bg-section-3">
       <div class="benefits-content">
         <h2>
@@ -146,6 +150,7 @@
       </div>
     </section>
 
+    <!-- Módulos de assuntos -->
     <section class="carousel bg-section-2">
       <div class="swiper netflix-slider">
         <div class="header-swiper">
@@ -289,7 +294,8 @@
       </div>
     </section>
 
-    <section class="cta bg-section-3" id="start">
+    <!-- CTA Monitoria Sefianas -->
+    <section class="cta bg-section-3">
       <div class="cta-content">
         <div class="header-cta">
           <h2>
@@ -351,8 +357,7 @@
                   <div class="btn-cta-container">
                     <a
                       href="https://invoice.infinitepay.io/plans/larissa-marcelo-/3VQYQleDkr"
-                      class="btn-primary"
-                      id="btn-completed-cta"
+                      class="btn-primary btn-effect-wrapper"
                     >
                       <span class="text-wrapper">
                         <!-- placeholder invisível (define tamanho do botão) -->
@@ -444,17 +449,16 @@
                   <div class="btn-cta-container">
                     <a
                       href="https://invoice.infinitepay.io/plans/larissa-marcelo-/aElckkjOh"
-                      class="btn-secondary"
-                      id="btn-questions-cta"
+                      class="btn-secondary btn-effect-wrapper"
                     >
                       <span class="text-wrapper">
                         <!-- placeholder invisível (define tamanho do botão) -->
                         <span class="text placeholder"
-                          >Quero só a Turma de Questões</span
+                          >Quero a Turma de Questões</span
                         >
                         <!-- textos animados -->
                         <span class="text default"
-                          >Quero só a Turma de Questões</span
+                          >Quero a Turma de Questões</span
                         >
                         <span class="text hover"
                           >Pague somente
@@ -493,27 +497,115 @@
               </div>
             </div>
           </div>
-
-          <!-- TEXTO ESTRATÉGICO -->
-          <div class="strategic">
-            <h2>
-              Por que a maioria escolhe a
-              <span class="highlight">Turma Completa</span>?
-            </h2>
-            <p>
-              Porque corrigir questões é essencial — mas entender profundamente
-              a <b>bibliografia</b> é o que diferencia quem
-              <b>acerta por sorte</b> de quem <b>acerta com segurança</b>. A
-              Turma Completa une teoria objetiva, prática direcionada e acesso
-              total aos projetos da Monitoria, formando uma preparação sólida,
-              contínua e <b>focada em aprovação</b>.
-            </p>
-          </div>
+        </div>
+        <!-- TEXTO ESTRATÉGICO -->
+        <div class="strategic">
+          <h2>
+            Por que a maioria escolhe a
+            <span class="highlight">Turma Completa</span>?
+          </h2>
+          <p>
+            Porque corrigir questões é essencial — mas entender profundamente a
+            <b>bibliografia</b> é o que diferencia quem
+            <b>acerta por sorte</b> de quem <b>acerta com segurança</b>. A Turma
+            Completa une teoria objetiva, prática direcionada e acesso total aos
+            projetos da Monitoria, formando uma preparação sólida, contínua e
+            <b>focada em aprovação</b>.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="cta support bg-section-1" id="end">
+    <!-- CTA Engrenando -->
+    <section class="cta bg-section-2">
+      <div class="cta-content">
+        <div class="header-cta">
+          <h2>
+            E se você pudesse ter
+            <span class="highlight">Enfermagem, Português, Redação</span> e uma
+            <span class="highlight">Mentoria Personalizada</span>
+            em um só lugar?
+          </h2>
+          <div>
+            <img
+              src="./assets/engrenando.png"
+              alt="logo"
+              style="width: 300px"
+            />
+          </div>
+          <div class="container-question-engrenando">
+            <p id="quiz-helper" class="highlight effect-fade effect-visible">
+              🎯 Descubra seu plano ideal em menos de 10 segundos
+            </p>
+            <p id="quiz-helper-result" class="highlight effect-fade d-none">
+              🔔 Encontramos o plano que mais combina com você
+            </p>
+            <button id="restart-quiz" class="btn-secondary effect-fade d-none">
+              Reiniciar quiz
+            </button>
+            <div id="quiz-step-1" class="quiz effect-fade effect-visible">
+              <h3>Qual concurso você quer conquistar?</h3>
+              <div class="options-question">
+                <button class="btn-primary btn-concurso" data-concurso="eags">
+                  EAGS-SEF
+                </button>
+                <button class="btn-primary btn-concurso" data-concurso="cap">
+                  CAP-ENF
+                </button>
+                <button
+                  class="btn-primary btn-concurso"
+                  data-concurso="indeciso"
+                >
+                  Ainda não me decidi
+                </button>
+              </div>
+            </div>
+            <div id="quiz-step-2" class="quiz effect-fade d-none">
+              <h3>
+                Você gostaria de ter um acompanhamento personalizado de seus
+                estudos?
+              </h3>
+              <div class="options-question">
+                <button class="btn-primary btn-mentoria" data-mentoria="sim">
+                  Sim
+                </button>
+                <button class="btn-primary btn-mentoria" data-mentoria="nao">
+                  Não
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="content-cards-engrenando"
+          class="cta-card-container effect-fade d-none"
+        ></div>
+
+        <!-- TEXTO ESTRATÉGICO -->
+        <div class="strategic">
+          <h2>
+            Por que nós indicamos um plano com
+            <span class="highlight">Mentoria</span>?
+          </h2>
+          <p>
+            Porque ter acesso ao conteúdo é importante — mas saber exatamente
+            <b>o que estudar</b>, <b>onde melhorar</b> e <b>como evoluir</b> é o
+            que acelera a <b>aprovação</b>. A Mentoria combina
+            <b>acompanhamento individual</b>, análise contínua de
+            <b>desempenho</b> e uma plataforma inteligente que registra seu
+            progresso e aponta, com <b>precisão</b>, os pontos que merecem mais
+            atenção. Com <b>orientação</b> próxima do professor e um
+            <b>plano de estudos ajustado à sua realidade</b> , você estuda com
+            mais estratégia, evita desperdício de tempo e <b>avança</b> com
+            muito mais segurança.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suporte -->
+    <section class="cta support bg-section-1">
       <div class="cta-content support-content">
         <img src="./assets/translucent_logo.png" alt="logo" />
         <h2>Ainda tem alguma dúvida?</h2>
@@ -544,99 +636,4 @@
       </p>
     </footer>
   </body>
-
-  <script>
-    document.getElementById("current-year").textContent =
-      new Date().getFullYear();
-
-    const swiper = new Swiper(".netflix-slider", {
-      slidesPerView: "auto",
-      spaceBetween: 16,
-      loop: true,
-      grabCursor: true,
-
-      autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-      },
-      speed: 3000,
-
-      breakpoints: {
-        768: {
-          spaceBetween: 24,
-        },
-        1024: {
-          spaceBetween: 32,
-        },
-      },
-    });
-
-    const slider = document.querySelector(".swiper-wrapper");
-
-    slider.addEventListener("mouseenter", () => {
-      swiper.autoplay.stop();
-    });
-
-    slider.addEventListener("mouseleave", () => {
-      swiper.autoplay.start();
-    });
-
-    document.querySelectorAll(".card-back").forEach((back) => {
-      back.classList.add("d-none");
-    });
-
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.querySelectorAll(".card-back").forEach((back) => {
-          back.classList.remove("d-none");
-        });
-      }, 100);
-    });
-
-    document.querySelectorAll(".flip-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        btn.closest(".cta-item").classList.toggle("flip");
-      });
-    });
-
-    /*
-    document.querySelectorAll(".flip-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const card = btn.closest(".cta-item");
-        const front = card.querySelector(".card-front");
-        const back = card.querySelector(".card-back");
-
-        const isFlipped = card.classList.toggle("flip");
-
-        front.classList.remove("d-none");
-        back.classList.remove("d-none");
-        if (isFlipped) {
-          front.classList.add("d-none");
-        } else {
-          back.classList.add("d-none");
-        }
-      });
-    });
-*/
-
-    const questionBtn = document.getElementById("btn-questions-cta");
-
-    questionBtn.addEventListener("mouseenter", () => {
-      questionBtn.classList.add("is-hover");
-    });
-
-    questionBtn.addEventListener("mouseleave", () => {
-      questionBtn.classList.remove("is-hover");
-    });
-
-    const completedBtn = document.getElementById("btn-completed-cta");
-
-    completedBtn.addEventListener("mouseenter", () => {
-      completedBtn.classList.add("is-hover");
-    });
-
-    completedBtn.addEventListener("mouseleave", () => {
-      completedBtn.classList.remove("is-hover");
-    });
-  </script>
 </html>
