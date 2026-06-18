@@ -21,11 +21,11 @@ const plans = {
     id: "eagsMentoria",
     name: "EAGS-SEF Mentoria",
     description: "A preparação perfeita para quem foca no EAGS-SEF.",
-    price: "270",
+    price: "320",
     billing: "monthly",
     badge: "Recomendado",
     features: ["Enfermagem", "Português", "Mentoria"],
-    url: "https://pay.plataformatutory.com.br/checkout/092d5c59-a2df-4cdf-baea-1ef99acdb8a9",
+    url: "https://pay.plataformatutory.com.br/checkout/2e09f7f4-5c62-48c5-8dc2-c2320f3e3082",
   },
 
   eags: {
@@ -33,11 +33,11 @@ const plans = {
     name: "EAGS-SEF",
     description:
       "A preparação melhor custo-benefício para quem foca no EAGS-SEF.",
-    price: "230",
+    price: "250",
     billing: "monthly",
     badge: "Recomendado",
     features: ["Enfermagem", "Português"],
-    url: "https://pay.plataformatutory.com.br/checkout/8d40f3d2-e8a5-420f-bd4a-98a86312c1f5",
+    url: "https://pay.plataformatutory.com.br/checkout/90ae98e6-1e52-4ea7-8738-adb2c40298e3",
   },
 
   cap: {
