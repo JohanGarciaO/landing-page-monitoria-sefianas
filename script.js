@@ -99,7 +99,7 @@ document.querySelectorAll(".btn-concurso").forEach((btn) => {
 
     applyFade(restartBtn, helper, 350);
 
-    if (state.concurso === "eags") {
+    if (["eags", "esa", "ebserh"].includes(state.concurso)) {
       applyFade(step2, step1, 600);
       return;
     }
@@ -146,29 +146,36 @@ function showRecommendation() {
 function getRecommendation() {
   if (state.concurso === "indeciso") {
     return {
-      primary: plans.megaCombo,
+      primary: plans.sefianas,
       secondary: null,
     };
   }
 
-  if (state.concurso === "cap") {
+  // if (state.concurso === "cap") {
+  //   return {
+  //     primary: plans.cap,
+  //     secondary: plans.sefianas,
+  //   };
+  // }
+
+  if (state.concurso === "eags") {
     return {
-      primary: plans.cap,
-      secondary: plans.megaCombo,
+      primary: state.mentoria === "sim" ? plans.eagsMentoria : plans.eags,
+      secondary: plans.sefianas,
     };
   }
 
-  if (state.concurso === "eags" && state.mentoria === "sim") {
+  if (state.concurso === "esa") {
     return {
-      primary: plans.eagsMentoria,
-      secondary: plans.megaCombo,
+      primary: state.mentoria === "sim" ? plans.esaMentoria : plans.esa,
+      secondary: plans.sefianas,
     };
   }
 
-  if (state.concurso === "eags" && state.mentoria === "nao") {
+  if (state.concurso === "ebserh") {
     return {
-      primary: plans.eags,
-      secondary: plans.megaCombo,
+      primary: state.mentoria === "sim" ? plans.ebserhMentoria : plans.ebserh,
+      secondary: plans.sefianas,
     };
   }
 }
@@ -198,7 +205,7 @@ function createCard(plan, featured = false) {
     <div class="cta-item">
       <div class="card-inner">
         <div class="card-front bg-section-1 ${featured ? "destaque" : ""}">
-          <div class="selo">${featured ? "🏆 Recomendado para você" : "⭐ Opção mais completa"}</div>
+          <div class="selo">${plan.badge}</div>
 
           <h3>${plan.name}</h3>
           <p>${plan.description}</p>

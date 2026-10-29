@@ -439,9 +439,12 @@ button:focus {
 }
 
 .cta-grid {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: 18px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cta-item {
@@ -449,6 +452,8 @@ button:focus {
   position: relative;
   perspective: 1200px;
   -webkit-perspective: 1200px;
+  width: 500px;
+  /* width: 90%; */
 }
 
 .cta-item h3 {
@@ -466,7 +471,8 @@ button:focus {
 
 .card-inner {
   position: relative;
-  height: 530px;
+  /* height: 530px; */
+  height: 650px;
   transition: transform 0.8s;
   transform-style: preserve-3d;
   transform: translateZ(0);
@@ -1216,12 +1222,15 @@ button:focus {
     display: flex;
     flex-direction: column;
   }
+  .cta-card-container .cta-item {
+    width: 90%;
+  }
   .cta-card-container .cta-item:nth-child(1) .card-inner {
-    min-height: 680px;
+    min-height: 815px;
   }
-  .cta-card-container .cta-item:nth-child(2) .card-inner {
+  /* .cta-card-container .cta-item:nth-child(2) .card-inner {
     min-height: 640px;
-  }
+  } */
   .card-front,
   .card-back {
     padding: 30px 20px;
@@ -1276,6 +1285,10 @@ button:focus {
 
   #content-cards-engrenando .cta-item ul {
     font-size: 0.9rem;
+  }
+
+  .btn-effect-wrapper {
+    width: 250px;
   }
 
   #content-cards-engrenando .btn-effect-wrapper {
