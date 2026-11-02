@@ -99,7 +99,9 @@ document.querySelectorAll(".btn-concurso").forEach((btn) => {
 
     applyFade(restartBtn, helper, 350);
 
-    if (["eags", "esa", "ebserh"].includes(state.concurso)) {
+    const plansWithMentoria = ["eags"];
+
+    if (plansWithMentoria.includes(state.concurso)) {
       applyFade(step2, step1, 600);
       return;
     }
@@ -151,12 +153,12 @@ function getRecommendation() {
     };
   }
 
-  // if (state.concurso === "cap") {
-  //   return {
-  //     primary: plans.cap,
-  //     secondary: plans.sefianas,
-  //   };
-  // }
+  if (state.concurso === "cap") {
+    return {
+      primary: plans.cap,
+      secondary: plans.sefianas,
+    };
+  }
 
   if (state.concurso === "eags") {
     return {

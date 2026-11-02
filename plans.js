@@ -43,7 +43,7 @@ const plans = {
     name: "EAGS-SEF",
     description:
       "A preparação melhor custo-benefício para quem foca no EAGS-SEF.",
-    price: "250",
+    price: "260",
     billing: "monthly",
     badge: "🏆 Recomendado para você",
     features: ["Enfermagem", "Português"],
@@ -54,7 +54,7 @@ const plans = {
     id: "cap",
     name: "CAP-ENF",
     description: "A preparação perfeita para quem foca no CAP-ENF.",
-    price: "230",
+    price: "260",
     billing: "monthly",
     badge: "🏆 Recomendado para você",
     features: ["Enfermagem", "Redação", "3 correções de redação por mês"],
@@ -77,7 +77,7 @@ const plans = {
     name: "ESA ENFERMAGEM",
     description:
       "A preparação melhor custo-benefício para quem foca na ESA saúde.",
-    price: "250",
+    price: "260",
     billing: "monthly",
     badge: "🏆 Recomendado para você",
     features: ["Enfermagem", "Português"],
@@ -100,7 +100,7 @@ const plans = {
     name: "EBSERH",
     description:
       "A preparação melhor custo-benefício para quem foca na EBSERH.",
-    price: "250",
+    price: "260",
     billing: "monthly",
     badge: "🏆 Recomendado para você",
     features: ["Enfermagem", "Português"],
