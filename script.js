@@ -1,5 +1,12 @@
 import plans from "./plans.js";
 
+function formatCurrency(value) {
+  return value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+}
+
 document.getElementById("current-year").textContent = new Date().getFullYear();
 
 const swiper = new Swiper(".netflix-slider", {
@@ -47,24 +54,33 @@ window.addEventListener("load", () => {
 });
 
 function setupCardEvents() {
-  document.querySelectorAll(".flip-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.closest(".cta-item").classList.toggle("flip");
-    });
+  document.addEventListener("click", (event) => {
+    const flipBtn = event.target.closest(".flip-btn");
+
+    if (flipBtn) {
+      flipBtn.closest(".cta-item")?.classList.toggle("flip");
+    }
   });
 
-  const wrapperBtns = document.querySelectorAll(".btn-effect-wrapper");
+  document.addEventListener(
+    "mouseenter",
+    (event) => {
+      const wrapper = event.target.closest(".btn-effect-wrapper");
+      wrapper?.classList.add("is-hover");
+    },
+    true,
+  );
 
-  wrapperBtns.forEach((btn) => {
-    btn.addEventListener("mouseenter", () => {
-      btn.classList.add("is-hover");
-    });
-
-    btn.addEventListener("mouseleave", () => {
-      btn.classList.remove("is-hover");
-    });
-  });
+  document.addEventListener(
+    "mouseleave",
+    (event) => {
+      const wrapper = event.target.closest(".btn-effect-wrapper");
+      wrapper?.classList.remove("is-hover");
+    },
+    true,
+  );
 }
+renderSemestralCards();
 setupCardEvents();
 
 function resetState() {
@@ -197,8 +213,6 @@ function renderCards(primary, secondary) {
     </div>
   `;
 
-  setupCardEvents();
-
   container.classList.remove("d-none");
 }
 
@@ -258,6 +272,155 @@ function createCard(plan, featured = false) {
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderSemestralCards() {
+  const container = document.getElementById("content-cards-semestrais");
+
+  if (!container) return;
+
+  const semesterPlans = [
+    plans.sefianasSemestral,
+    plans.enfermagemPortuguesSemestral,
+    plans.eagsMentoriaSemestral,
+  ];
+
+  container.innerHTML = `
+    <div class="cta-grid">
+      ${semesterPlans
+        .map((plan) =>
+          createSemestralCard(plan, plan.id === "sefianasSemestral"),
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function createSemestralCard(plan, featured = false) {
+  const hasPix = Boolean(plan.pixPrice);
+
+  const priceHtml = hasPix
+    ? `
+      <div class="semestral-price">
+        <span class="semestral-price-label">
+          A partir de
+        </span>
+
+        <div class="semestral-installments">
+          <span class="installments-count">
+            ${plan.installments}x de
+          </span>
+          <strong>
+            ${formatCurrency(plan.installmentPrice)}
+          </strong>
+        </div>
+
+        <span class="semestral-no-interest">
+          Sem juros
+        </span>
+
+        <span class="semestral-price-total">
+          Total: ${formatCurrency(plan.total)}
+        </span>
+      </div>
+
+      <div class="semestral-offer">
+        <span class="offer-badge">
+          ${plan.pixDiscount}% OFF
+        </span>
+
+        <span>
+          Ou <strong>${formatCurrency(plan.pixPrice)}</strong>
+          no Pix
+        </span>
+      </div>
+    `
+    : `
+      <div class="semestral-price">
+        <span class="semestral-price-label">
+          Valor do semestre
+        </span>
+
+        <div class="semestral-full-price">
+          ${formatCurrency(plan.total)}
+        </div>
+
+        <span class="semestral-price-total">
+          6 meses de preparação
+        </span>
+      </div>
+
+      <div class="semestral-offer">
+        <span class="offer-badge">
+          Economize ${formatCurrency(plan.savings)}
+        </span>
+        <span>Em relação ao plano mensal</span>
+      </div>
+    `;
+
+  const enrollmentHtml = `
+  <a
+    href="${plan.url ?? "#planos-semestrais"}"
+    class="btn-primary btn-semestral-enroll"
+  >
+    ${plan.url ? "Fazer matrícula" : "Matrículas em breve"}
+  </a>
+`;
+
+  return `
+    <div class="cta-item">
+      <div class="card-inner">
+
+        <div class="card-front bg-section-1 ${featured ? "destaque" : ""}">
+          <div class="selo">${plan.badge}</div>
+
+          <h3>${plan.name}</h3>
+          <p>${plan.description}</p>
+
+          ${priceHtml}
+
+          <div class="btn-cta-container">
+            ${enrollmentHtml}
+
+            <button type="button" class="flip-btn">
+              <span class="icon-wrapper">
+                <i class="fa-solid fa-rotate"></i>
+              </span>
+              Ver detalhes da oferta
+            </button>
+          </div>
+        </div>
+
+        <div class="card-back bg-section-1 ${featured ? "destaque" : ""}">
+          <h3>Por que escolher este plano?</h3>
+
+          <ul>
+            ${plan.features.map((feature) => `<li>✔ ${feature}</li>`).join("")}
+          </ul>
+
+          <div class="semestral-back-summary">
+            <span>Investimento semestral</span>
+            <strong>${formatCurrency(plan.total)}</strong>
+            ${
+              hasPix
+                ? `<small>Ou ${formatCurrency(plan.pixPrice)} no Pix</small>`
+                : `<small>Economize ${formatCurrency(plan.savings)}</small>`
+            }
+          </div>
+
+          <div class="btn-cta-container">
+            <button type="button" class="flip-btn">
+              <span class="icon-wrapper">
+                <i class="fa-solid fa-rotate"></i>
+              </span>
+              Voltar
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   `;

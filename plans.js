@@ -106,6 +106,59 @@ const plans = {
     features: ["Enfermagem", "Português"],
     url: "https://pay.plataformatutory.com.br/checkout/90ae98e6-1e52-4ea7-8738-adb2c40298e3",
   },
+
+  // PLANOS SEMESTRAIS
+
+  sefianasSemestral: {
+    id: "sefianasSemestral",
+    name: "Enfermagem para Concursos",
+    description:
+      "Garanta 6 meses de preparação em Enfermagem com uma condição especial.",
+    badge: "⭐ Condição especial no Pix",
+    installments: 6,
+    installmentPrice: 127.32,
+    total: 763.92,
+    pixDiscount: 9.67,
+    pixPrice: 690.05,
+    savings: 136.08,
+    features: [
+      "Preparação completa em Enfermagem por 6 meses",
+      "Parcelamento em 6x sem juros",
+      "9,67% de desconto para pagamento no Pix",
+    ],
+    url: "https://checkout.infinitepay.io/larissa-marcelo-/xCoBcmGMS8",
+  },
+
+  enfermagemPortuguesSemestral: {
+    id: "enfermagemPortuguesSemestral",
+    name: "Enfermagem + Português",
+    description:
+      "Duas disciplinas essenciais para ampliar sua preparação para concursos.",
+    badge: "💰 Economize R$ 515",
+    total: 1045,
+    savings: 515,
+    features: [
+      "Enfermagem e Português durante 6 meses",
+      "Preparação para diferentes concursos",
+      "Economia de R$ 515 em relação ao mensal",
+    ],
+    url: "https://pay.plataformatutory.com.br/checkout/8b69343b-6773-4bb0-9ada-5c7954cb93f7",
+  },
+
+  eagsMentoriaSemestral: {
+    id: "eagsMentoriaSemestral",
+    name: "EAGS-SEF com Mentoria",
+    description: "Sua preparação para o EAGS com acompanhamento personalizado.",
+    badge: "🏆 Economize R$ 730",
+    total: 1190,
+    savings: 730,
+    features: [
+      "Enfermagem, Português e Mentoria por 6 meses",
+      "Acompanhamento personalizado dos estudos",
+      "Economia de R$ 730 em relação ao mensal",
+    ],
+    url: "https://pay.plataformatutory.com.br/checkout/c7fc7140-8a9c-4174-8535-12cf1b3fb4bd",
+  },
 };
 
 export default plans;
