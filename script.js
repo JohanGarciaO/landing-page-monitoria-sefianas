@@ -80,6 +80,9 @@ function setupCardEvents() {
     true,
   );
 }
+
+const promotionEnd = new Date("2026-11-04T00:00:00-03:00");
+
 renderSemestralCards();
 setupCardEvents();
 
@@ -282,11 +285,15 @@ function renderSemestralCards() {
 
   if (!container) return;
 
-  const semesterPlans = [
-    plans.sefianasSemestral,
-    plans.enfermagemPortuguesSemestral,
-    plans.eagsMentoriaSemestral,
-  ];
+  const promotionActive = Date.now() < promotionEnd.getTime();
+
+  const semesterPlans = promotionActive
+    ? [
+        plans.sefianasSemestral,
+        plans.enfermagemPortuguesSemestral,
+        plans.eagsMentoriaSemestral,
+      ]
+    : [plans.sefianasSemestral];
 
   container.innerHTML = `
     <div class="cta-grid">
@@ -297,6 +304,18 @@ function renderSemestralCards() {
         .join("")}
     </div>
   `;
+
+  const remainingTime = promotionEnd.getTime() - Date.now();
+
+  if (remainingTime > 0) {
+    setTimeout(renderSemestralCards, remainingTime);
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      renderSemestralCards();
+    }
+  });
 }
 
 function createSemestralCard(plan, featured = false) {

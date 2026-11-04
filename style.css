@@ -796,13 +796,23 @@ button:focus {
   align-items: stretch;
 }
 
+.semestral .cta-grid:has(> .cta-item:only-child) {
+  display: flex;
+  justify-content: center;
+}
+
+.semestral .cta-grid:has(> .cta-item:only-child) .cta-item {
+  width: 100%;
+  max-width: 400px;
+}
+
 .semestral .cta-item {
   width: 100%;
   min-width: 0;
 }
 
 .semestral .card-inner {
-  height: 570px;
+  height: 580px;
 }
 
 .semestral .card-front,
