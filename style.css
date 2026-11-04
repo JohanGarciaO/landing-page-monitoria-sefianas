@@ -783,6 +783,202 @@ button:focus {
   flex-wrap: wrap;
 }
 
+/* PLANOS SEMESTRAIS */
+
+.semestral .cta-content {
+  width: min(1200px, 94%);
+}
+
+.semestral .cta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.semestral .cta-grid:has(> .cta-item:only-child) {
+  display: flex;
+  justify-content: center;
+}
+
+.semestral .cta-grid:has(> .cta-item:only-child) .cta-item {
+  width: 100%;
+  max-width: 400px;
+}
+
+.semestral .cta-item {
+  width: 100%;
+  min-width: 0;
+}
+
+.semestral .card-inner {
+  height: 580px;
+}
+
+.semestral .card-front,
+.semestral .card-back {
+  padding: 55px 24px 24px;
+  align-items: center;
+  text-align: center;
+}
+
+.semestral .card-front {
+  padding-bottom: 24px;
+}
+
+.semestral .cta-item h3 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin: 20px 0 12px;
+}
+
+.semestral .cta-item p {
+  font-size: 0.83rem;
+  margin-bottom: 18px;
+  min-height: 55px;
+}
+
+.semestral .selo {
+  top: 12px;
+  right: 12px;
+  font-size: 0.65rem;
+}
+
+/* PLANOS SEMESTRAIS - PREÇOS */
+
+.semestral-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  min-height: 165px;
+}
+
+.semestral-price-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.semestral-installments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.semestral-installments strong,
+.semestral-full-price {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.installments-count {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.semestral-no-interest {
+  color: var(--cyan);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.semestral-price-total {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* PLANOS SEMESTRAIS - DESTAQUE DE ECONOMIA */
+
+.semestral-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px 10px;
+  background: rgba(0, 229, 255, 0.055);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  border-radius: 12px;
+  font-size: 0.78rem;
+}
+
+.semestral-offer strong {
+  color: var(--cyan);
+}
+
+.offer-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--cyan);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+/* PLANOS SEMESTRAIS - BOTÕES */
+
+.semestral .btn-cta-container {
+  position: static;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.btn-semestral-enroll {
+  width: 80%;
+  max-width: 290px;
+  text-align: center;
+}
+
+.btn-semestral-enroll:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* PLANOS SEMESTRAIS - VERSO DO CARD */
+
+.semestral .card-back h3 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.semestral .card-back ul {
+  width: 100%;
+  margin: 15px 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.semestral .card-back li {
+  margin-bottom: 10px;
+}
+
+.semestral-back-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  margin-bottom: 75px;
+  font-size: 0.8rem;
+}
+
+.semestral-back-summary strong {
+  font-size: 1.6rem;
+  color: var(--cyan);
+}
+
+.semestral-back-summary small {
+  color: var(--muted);
+}
+
 /* FEEDBACK */
 
 .feedback {
@@ -1124,7 +1320,9 @@ button:focus {
     font-size: 0.8rem;
     line-height: 1.8rem;
   }
-
+  .semestral .cta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   /* .content-feedback {
     grid-template-columns: repeat(2, 1fr);
   } */
@@ -1225,10 +1423,10 @@ button:focus {
   .cta-card-container .cta-item {
     width: 90%;
   }
-  .cta-card-container .cta-item:nth-child(1) .card-inner {
+  #sefianas-plano-mensal.cta-card-container .cta-item:nth-child(1) .card-inner {
     min-height: 815px;
   }
-  /* .cta-card-container .cta-item:nth-child(2) .card-inner {
+  /* #sefianas-plano-mensal.cta-card-container .cta-item:nth-child(2) .card-inner {
     min-height: 640px;
   } */
   .card-front,
@@ -1270,6 +1468,33 @@ button:focus {
   }
 }
 
+@media (max-width: 700px) {
+  .semestral .cta-content {
+    width: 94%;
+    padding: 30px 12px;
+  }
+
+  .semestral .cta-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .semestral .cta-item {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .semestral .card-inner {
+    height: 600px;
+  }
+
+  .semestral-installments strong,
+  .semestral-full-price {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 600px) {
   #content-cards-engrenando .card-inner {
     width: 95%;
@@ -1300,5 +1525,13 @@ button:focus {
   }
   .feedback-card {
     height: 300px;
+  }
+}
+
+@media (max-width: 380px) {
+  .semestral .card-front,
+  .semestral .card-back {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
