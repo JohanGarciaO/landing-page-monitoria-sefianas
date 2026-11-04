@@ -55,6 +55,8 @@ window.addEventListener("load", () => {
 
 function setupCardEvents() {
   document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+
     const flipBtn = event.target.closest(".flip-btn");
 
     if (flipBtn) {
@@ -65,6 +67,8 @@ function setupCardEvents() {
   document.addEventListener(
     "mouseenter",
     (event) => {
+      if (!(event.target instanceof Element)) return;
+
       const wrapper = event.target.closest(".btn-effect-wrapper");
       wrapper?.classList.add("is-hover");
     },
@@ -74,6 +78,8 @@ function setupCardEvents() {
   document.addEventListener(
     "mouseleave",
     (event) => {
+      if (!(event.target instanceof Element)) return;
+
       const wrapper = event.target.closest(".btn-effect-wrapper");
       wrapper?.classList.remove("is-hover");
     },
