@@ -87,7 +87,7 @@ function setupCardEvents() {
   );
 }
 
-const promotionEnd = new Date("2026-11-04T00:00:00-03:00");
+// const promotionEnd = new Date("2026-11-04T00:00:00-03:00");
 
 renderSemestralCards();
 setupCardEvents();
@@ -291,15 +291,21 @@ function renderSemestralCards() {
 
   if (!container) return;
 
-  const promotionActive = Date.now() < promotionEnd.getTime();
+  // const promotionActive = Date.now() < promotionEnd.getTime();
 
-  const semesterPlans = promotionActive
-    ? [
-        plans.sefianasSemestral,
-        plans.enfermagemPortuguesSemestral,
-        plans.eagsMentoriaSemestral,
-      ]
-    : [plans.sefianasSemestral];
+  // const semesterPlans = promotionActive
+  //   ? [
+  //       plans.sefianasSemestral,
+  //       plans.enfermagemPortuguesSemestral,
+  //       plans.eagsMentoriaSemestral,
+  //     ]
+  //   : [plans.sefianasSemestral];
+
+  const semesterPlans = [
+    plans.sefianasSemestral,
+    plans.enfermagemPortuguesSemestral,
+    plans.eagsMentoriaSemestral,
+  ];
 
   container.innerHTML = `
     <div class="cta-grid">
@@ -311,17 +317,17 @@ function renderSemestralCards() {
     </div>
   `;
 
-  const remainingTime = promotionEnd.getTime() - Date.now();
+  // const remainingTime = promotionEnd.getTime() - Date.now();
 
-  if (remainingTime > 0) {
-    setTimeout(renderSemestralCards, remainingTime);
-  }
+  // if (remainingTime > 0) {
+  //   setTimeout(renderSemestralCards, remainingTime);
+  // }
 
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) {
-      renderSemestralCards();
-    }
-  });
+  // document.addEventListener("visibilitychange", () => {
+  //   if (!document.hidden) {
+  //     renderSemestralCards();
+  //   }
+  // });
 }
 
 function createSemestralCard(plan, featured = false) {
